@@ -1,0 +1,14 @@
+---
+title: Testing How the Site Works
+author: Ben Kolbrich
+date: '2017-09-25'
+slug: testing-how-the-site-works
+categories:
+  - R
+  - data science
+  - typing
+tags:
+  - testing
+---
+
+Let's add some text to the post to test whether it's really working.
