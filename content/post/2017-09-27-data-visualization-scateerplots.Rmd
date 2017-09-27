@@ -1,0 +1,43 @@
+---
+title: Data Visualization, Scatterplots
+author: Ben Kolbrich
+date: '2017-09-27'
+slug: data-visualization-scatterplots
+categories:
+  - data science
+  - R
+  - Rstudio
+tags:
+  - Lahman
+  - sports
+  - scatterplots
+---
+```{r}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+#extracting data
+```{r}
+query<-"Select playerID, sum(HR) AS Career_HR, sum(SO) AS Career_SO
+FROM Batting
+GROUP BY playerID
+HAVING sum(hr)>=400"
+result<-sqldf(query)
+```
+
+
+
+#visualizing data
+```{r}
+ggplot()+
+  geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=3)+
+ggtitle("Career Strikeout VS Homeruns for Great Hitters")+
+xlab("Career Strikeouts")+ ylab("Career Homeruns")
+```
+
+ggplot()+
+  geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=45)+
+ggtitle("Career Strikeout VS Homeruns for Great Hitters")+
+xlab("Career Strikeouts")+ ylab("Career Homeruns")
