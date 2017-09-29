@@ -1,5 +1,5 @@
 ---
-title: Data Visualization, Scatterplots
+title: 'Data Visualization: Scatterplots'
 author: Ben Kolbrich
 date: '2017-09-27'
 slug: data-visualization-scatterplots
@@ -12,13 +12,18 @@ tags:
   - sports
   - scatterplots
 ---
+##Basics of Visualization
+Here, we will demonstrate how to visualize data from an R database. Here are the packages necessary.
 ```{r}
+options(warn=-1)
 library(Lahman)
 library(sqldf)
 library(ggplot2)
+
 ```
 
-#extracting data
+###Extracting Data
+First, let's have R take the data and store it in a variable it will remember.
 ```{r}
 query<-"Select playerID, sum(HR) AS Career_HR, sum(SO) AS Career_SO
 FROM Batting
@@ -27,17 +32,12 @@ HAVING sum(hr)>=400"
 result<-sqldf(query)
 ```
 
+###Visualizing Data
 
-
-#visualizing data
+Now it's time to actually display the data in a  recognizable format.
 ```{r}
 ggplot()+
   geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=3)+
 ggtitle("Career Strikeout VS Homeruns for Great Hitters")+
 xlab("Career Strikeouts")+ ylab("Career Homeruns")
 ```
-
-ggplot()+
-  geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=45)+
-ggtitle("Career Strikeout VS Homeruns for Great Hitters")+
-xlab("Career Strikeouts")+ ylab("Career Homeruns")

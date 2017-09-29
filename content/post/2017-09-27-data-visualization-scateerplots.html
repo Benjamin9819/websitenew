@@ -1,5 +1,5 @@
 ---
-title: Data Visualization, Scatterplots
+title: 'Data Visualization: Scatterplots'
 author: Ben Kolbrich
 date: '2017-09-27'
 slug: data-visualization-scatterplots
@@ -15,32 +15,32 @@ tags:
 
 
 
-<pre class="r"><code>library(Lahman)</code></pre>
-<pre><code>## Warning: package &#39;Lahman&#39; was built under R version 3.4.1</code></pre>
-<pre class="r"><code>library(sqldf)</code></pre>
-<pre><code>## Warning: package &#39;sqldf&#39; was built under R version 3.4.1</code></pre>
+<div id="basics-of-visualization" class="section level2">
+<h2>Basics of Visualization</h2>
+<p>Here, we will demonstrate how to visualize data from an R database. Here are the packages necessary.</p>
+<pre class="r"><code>options(warn=-1)
+library(Lahman)
+library(sqldf)</code></pre>
 <pre><code>## Loading required package: gsubfn</code></pre>
-<pre><code>## Warning: package &#39;gsubfn&#39; was built under R version 3.4.1</code></pre>
 <pre><code>## Loading required package: proto</code></pre>
-<pre><code>## Warning: package &#39;proto&#39; was built under R version 3.4.1</code></pre>
 <pre><code>## Loading required package: RSQLite</code></pre>
-<pre><code>## Warning: package &#39;RSQLite&#39; was built under R version 3.4.1</code></pre>
 <pre class="r"><code>library(ggplot2)</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.1</code></pre>
-<div id="extracting-data" class="section level1">
-<h1>extracting data</h1>
+<div id="extracting-data" class="section level3">
+<h3>Extracting Data</h3>
+<p>First, let’s have R take the data and store it in a variable it will remember.</p>
 <pre class="r"><code>query&lt;-&quot;Select playerID, sum(HR) AS Career_HR, sum(SO) AS Career_SO
 FROM Batting
 GROUP BY playerID
 HAVING sum(hr)&gt;=400&quot;
 result&lt;-sqldf(query)</code></pre>
 </div>
-<div id="visualizing-data" class="section level1">
-<h1>visualizing data</h1>
+<div id="visualizing-data" class="section level3">
+<h3>Visualizing Data</h3>
+<p>Now it’s time to actually display the data in a recognizable format.</p>
 <pre class="r"><code>ggplot()+
   geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=3)+
 ggtitle(&quot;Career Strikeout VS Homeruns for Great Hitters&quot;)+
 xlab(&quot;Career Strikeouts&quot;)+ ylab(&quot;Career Homeruns&quot;)</code></pre>
 <p><img src="/post/2017-09-27-data-visualization-scateerplots_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>ggplot()+ geom_point(data=result,aes(x=Career_SO,y=Career_HR), size=45)+ ggtitle(“Career Strikeout VS Homeruns for Great Hitters”)+ xlab(“Career Strikeouts”)+ ylab(“Career Homeruns”)</p>
+</div>
 </div>

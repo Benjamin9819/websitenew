@@ -36,14 +36,14 @@ googleAnalytics = "XXX"
     post = "/:year/:month/:day/:filename/"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Data Science"
     url = "/"
     weight = 1
 
 [[menu.main]]
     name = "Contact"
     url = "/page/contact/"
-    weight = 2
+    weight = 4
 
 [[menu.main]]
     name = "About"
@@ -51,9 +51,9 @@ googleAnalytics = "XXX"
     weight = 3
     
 [[menu.main]]    
-    name = "Projects"
-    url = "/project/"
-    weight = 1.5
+    name = "Creative Writing"
+    url = "/writing/"
+    weight = 2
     
 [[menu.main]]
     name= "Store"
