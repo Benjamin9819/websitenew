@@ -1,0 +1,10 @@
+---
+title: additional test new subdirectory
+author: BPK
+date: '2017-09-29'
+slug: additional-test-new-subdirectory
+categories: []
+tags: []
+---
+
+testing

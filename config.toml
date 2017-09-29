@@ -43,12 +43,17 @@ googleAnalytics = "XXX"
 [[menu.main]]
     name = "Contact"
     url = "/page/contact/"
-    weight = 4
+    weight = 5
+
+[[menu.main]]
+    name = "Original Work"
+    url= "/original"
+    weight = 3
 
 [[menu.main]]
     name = "About"
     url = "/page/about/"
-    weight = 3
+    weight = 4
     
 [[menu.main]]    
     name = "Creative Writing"
@@ -58,4 +63,4 @@ googleAnalytics = "XXX"
 [[menu.main]]
     name= "Store"
     url = "/store"
-    weight=5
+    weight=6
