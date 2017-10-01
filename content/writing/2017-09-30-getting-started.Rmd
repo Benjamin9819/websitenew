@@ -1,0 +1,16 @@
+---
+title: 'Getting Started'
+author: Benjamin Kolbrich
+date: '2017-09-30'
+slug: 'getting-started'
+categories:
+  - starting a book
+  - books
+  - creative fiction
+tags:
+  - writing
+  - starting a book
+  - how to start a book
+---
+Welcome to Part 1 of How to Write a Complete Manuscript, the series that details writing a book from start to finish. It details what is required both on a emotional level, and on a real, results-driven one. This series does not describes specifics of prose. Rather, it describes how to build and continue a plot for a novel-length story--- something much harder than it sounds.
+

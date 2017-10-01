@@ -24,8 +24,8 @@ googleAnalytics = "XXX"
 
     email = "XXX@example.com"
     opengraph = true
-    shareTwitter = true
-    shareFacebook = true
+    shareTwitter = false
+    shareFacebook = false
     shareGooglePlus = true
     shareLinkedIn = false
     dateFormat = "Mon, Jan 2, 2006"
