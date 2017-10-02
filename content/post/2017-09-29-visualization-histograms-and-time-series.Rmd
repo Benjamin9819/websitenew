@@ -15,11 +15,12 @@ tags:
   - bar graphs
 ---
 ##Data Visualization
-###Histograms
 Here, we will demonstrate two new types of visualizations. We will recognize these from high school and everyday life, but we may not know how to code them in R.
 
+###Histograms
+
 Let's attempt to do so now, using data from the Lahman database about the overall distribution of weight for MLB players.
-```{r}
+```{r setup, include=FALSE} 
 library(Lahman)
 library(ggplot2)
 library(sqldf)

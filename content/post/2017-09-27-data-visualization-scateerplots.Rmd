@@ -13,8 +13,7 @@ tags:
   - scatterplots
 ---
 ##Basics of Visualization
-Here, we will demonstrate how to visualize data from an R database. Here are the packages necessary.
-```{r}
+```{r setup, include=FALSE} 
 options(warn=-1)
 library(Lahman)
 library(sqldf)

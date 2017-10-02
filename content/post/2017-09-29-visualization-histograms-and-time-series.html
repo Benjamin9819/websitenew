@@ -19,24 +19,17 @@ tags:
 
 <div id="data-visualization" class="section level2">
 <h2>Data Visualization</h2>
+<p>Here, we will demonstrate two new types of visualizations. We will recognize these from high school and everyday life, but we may not know how to code them in R.</p>
 <div id="histograms" class="section level3">
 <h3>Histograms</h3>
-<p>Here, we will demonstrate two new types of visualizations. We will recognize these from high school and everyday life, but we may not know how to code them in R.</p>
 <p>Let’s attempt to do so now, using data from the Lahman database about the overall distribution of weight for MLB players.</p>
-<pre class="r"><code>library(Lahman)
-library(ggplot2)
-library(sqldf)</code></pre>
-<pre><code>## Loading required package: gsubfn</code></pre>
-<pre><code>## Loading required package: proto</code></pre>
-<pre><code>## Loading required package: RSQLite</code></pre>
-<pre class="r"><code>options(warn=-1)</code></pre>
 <pre class="r"><code>query&lt;-&quot;Select weight from Master&quot;
 result&lt;-sqldf(query)</code></pre>
 <p>That lets us store the weights in a variable, named ‘result’. This information can then be retrieved and used to display a graph.</p>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=result, aes(x=weight), color=&quot;blue&quot;, bins=60, fill=&quot;orange&quot;)+
   ggtitle(&quot;Weight Distribution Among All MLB Players&quot;)</code></pre>
-<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-3-1.png" width="672" /> ###Time Series Our next example is to plot a variable against time. In this example, we will do it plotting Babe Ruth’s homeruns over the course of his career.</p>
+<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /> ###Time Series Our next example is to plot a variable against time. In this example, we will do it plotting Babe Ruth’s homeruns over the course of his career.</p>
 <pre class="r"><code>query&lt;-&quot;Select yearID, HR From Batting
 where playerID=&#39;ruthba01&#39;&quot;
 result1&lt;-sqldf(query)</code></pre>
@@ -45,6 +38,6 @@ result1&lt;-sqldf(query)</code></pre>
   geom_point(data=result1, aes(x=yearID, y=HR), size=2.5)+
   geom_line(data=result1, aes(x=yearID, y=HR))+
   ggtitle(&quot;Babe Ruth&#39;s Homeruns Throughout his Career&quot;)</code></pre>
-<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 </div>

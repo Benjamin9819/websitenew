@@ -1,0 +1,34 @@
+---
+title: 'Visualization: Bar Plots'
+author: Ben Kolbrich
+date: '2017-10-02'
+slug: data-visualization-bar-plots
+categories:
+  - R
+  - Rstudio
+  - data science
+tags:
+  - Bar Plots
+  - Lahman
+---
+
+
+
+<div id="bar-plots" class="section level3">
+<h3>Bar Plots</h3>
+<p>Today we will look at at visualizing the homerun totals for all MLB teams during the 1980 year. To begin, we have to extract the data and store it in an accessible way.</p>
+<pre class="r"><code>query&lt;-&quot;Select HR, name from Teams
+where yearID=1980
+ORDER BY HR&quot;
+result&lt;-sqldf(query)</code></pre>
+<p>Now we have to add factors to the data so that ggplot will order it in a pleasing way. That looks like this:</p>
+<pre class="r"><code>result$name&lt;-factor(result$name, levels=result$name)</code></pre>
+<p>Finally, we can display that data in an understandable way.</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result, aes(x=name, y=HR),stat = &#39;identity&#39;, color=&quot;white&quot;, fill=&quot;orange&quot;)+
+  coord_flip()+
+  xlab(&quot;Franchise Name&quot;)+
+  ylab(&quot;Homerun Total&quot;)+
+  ggtitle(&quot;Total Homeruns per Team for the 1980 Year&quot;)</code></pre>
+<p><img src="/post/2017-10-02-data-visualization-bar-plots_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
