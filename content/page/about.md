@@ -11,4 +11,4 @@ This blog is designed to showcase introductory concepts in both data science and
 
 ## School
 
-Ben Kolbrich is currently attending Mercyhurst University, pursuing a BA in Intelligence Studies.
+Ben Kolbrich is currently attending Mercyhurst University, pursuing a BA in Intelligence Studies. d
