@@ -38,6 +38,7 @@ ggplot()+
   geom_histogram(data=result, aes(x=weight), color="blue", bins=60, fill="orange")+
   ggtitle("Weight Distribution Among All MLB Players")
 ```
+
 ###Time Series
 Our next example is to plot a variable against time. In this example, we will do it plotting Babe Ruth's homeruns over the course of his career.
 ```{r}
@@ -45,7 +46,9 @@ query<-"Select yearID, HR From Batting
 where playerID='ruthba01'"
 result1<-sqldf(query)
 ```
+
 Note the single quotations on ruthba01, as it's a nonnumerical value. Now we can plot the data, and this time add connecting lines to fully understand the trends.
+
 ```{r}
 ggplot()+
   geom_point(data=result1, aes(x=yearID, y=HR), size=2.5)+

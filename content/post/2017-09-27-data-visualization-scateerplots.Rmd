@@ -14,7 +14,6 @@ tags:
 ---
 ##Basics of Visualization
 ```{r setup, include=FALSE} 
-options(warn=-1)
 library(Lahman)
 library(sqldf)
 library(ggplot2)

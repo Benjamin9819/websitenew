@@ -29,7 +29,11 @@ result&lt;-sqldf(query)</code></pre>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=result, aes(x=weight), color=&quot;blue&quot;, bins=60, fill=&quot;orange&quot;)+
   ggtitle(&quot;Weight Distribution Among All MLB Players&quot;)</code></pre>
-<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /> ###Time Series Our next example is to plot a variable against time. In this example, we will do it plotting Babe Ruth’s homeruns over the course of his career.</p>
+<p><img src="/post/2017-09-29-visualization-histograms-and-time-series_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="time-series" class="section level3">
+<h3>Time Series</h3>
+<p>Our next example is to plot a variable against time. In this example, we will do it plotting Babe Ruth’s homeruns over the course of his career.</p>
 <pre class="r"><code>query&lt;-&quot;Select yearID, HR From Batting
 where playerID=&#39;ruthba01&#39;&quot;
 result1&lt;-sqldf(query)</code></pre>
